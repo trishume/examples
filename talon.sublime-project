@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+    {
+      "path": "/Applications/Talon.app/Contents/Resources/plugins"
+    },
+    {
+      "path": "/Applications/Talon.app/Contents/Resources/pypy/site-packages/talon"
+    },
+	]
+}
