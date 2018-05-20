@@ -70,6 +70,7 @@ def rot13(i, word, _):
 formatters = {
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
+    'upper':  (True,  lambda i, word, _: word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
     'smash':  (True,  lambda i, word, _: word),
     # spinal or kebab?
@@ -110,7 +111,7 @@ ctx = Context('input')
 keymap = {}
 keymap.update(alpha)
 keymap.update({
-    'phrase <dgndictation> [over]': text,
+    'say <dgndictation> [over]': text,
     'word <dgnwords>': word,
 
     'sentence <dgndictation> [over]': sentence_text,
@@ -127,6 +128,7 @@ keymap.update({
     'down':  Key('down'),
 
     'delete': Key('backspace'),
+    'junk': Key('alt-backspace'),
 
     'slap': [Key('cmd-right enter')],
     'enter': Key('enter'),
