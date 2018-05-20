@@ -56,4 +56,4 @@ class NoiseModel:
                     self.hiss_last = now
             self.hiss_start = 0
 
-model = NoiseModel()
+# model = NoiseModel()

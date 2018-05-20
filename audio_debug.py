@@ -73,22 +73,22 @@ class AudioTimeline:
             lib.nvgLineTo(vg, x + ot, wavemid + waveheight / 2 - 5)
             lib.nvgStroke(vg)
 
-font = None
-timeline = AudioTimeline()
+# font = None
+# timeline = AudioTimeline()
 
-def on_noise(noise):
-    with timeline.lock:
-        timeline.events.append([len(timeline.history), noise])
+# def on_noise(noise):
+#     with timeline.lock:
+#         timeline.events.append([len(timeline.history), noise])
 
-def on_overlay(vg, width, height):
-    global font
-    if font is None:
-        font = lib.nvgCreateFont(vg, 'courier'.encode('utf8'), '/Library/Fonts/Courier New Bold.ttf'.encode('utf8'));
-    lib.nvgFontFaceId(vg, font)
-    lib.nvgFontSize(vg, 18)
+# def on_overlay(vg, width, height):
+#     global font
+#     if font is None:
+#         font = lib.nvgCreateFont(vg, 'courier'.encode('utf8'), '/Library/Fonts/Courier New Bold.ttf'.encode('utf8'));
+#     lib.nvgFontFaceId(vg, font)
+#     lib.nvgFontSize(vg, 18)
 
-    timeline.draw(vg, 0, height * 4/5, width, height/5)
+#     timeline.draw(vg, 0, height * 4/5, width, height/5)
 
-noise.register('noise', on_noise)
-record.register('record', timeline.append)
-app.register('overlay', on_overlay)
+# noise.register('noise', on_noise)
+# record.register('record', timeline.append)
+# app.register('overlay', on_overlay)
