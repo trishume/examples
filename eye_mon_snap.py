@@ -47,4 +47,4 @@ class MonSnap:
             self.saved_mouse = p
         self.main_mouse = on_main
 
-snap = MonSnap()
+# snap = MonSnap()
