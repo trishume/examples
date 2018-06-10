@@ -1,5 +1,5 @@
 import threading
-import linuxtrack
+from . import linuxtrack
 import time
 
 try:
