@@ -1,6 +1,7 @@
 # Tristan's Talon User Folder
 
 Based on the Talon examples repo, with extra scripts and modifications by Tristan.
+All modifications are licensed under the 0-clause BSD license in `LICENSE` like the original.
 
 ## Main Modifications:
 
