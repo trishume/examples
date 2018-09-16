@@ -1,5 +1,8 @@
 import threading
-from . import linuxtrack
+try:
+    from . import linuxtrack
+except Exception: #ImportError
+    import linuxtrack
 import time
 
 try:

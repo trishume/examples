@@ -38,5 +38,5 @@ def ui_event(event, arg):
     if event in ('app_activate', 'app_launch', 'app_close', 'win_open', 'win_close'):
         update_lists()
 
-ui.register('', ui_event)
+# ui.register('', ui_event)
 update_lists()

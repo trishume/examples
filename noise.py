@@ -5,6 +5,8 @@ from talon import tap
 from talon.audio import noise
 from talon.track.geom import Point2d
 
+from . import state
+
 class NoiseModel:
     def __init__(self):
         self.hiss_start = 0
@@ -15,7 +17,23 @@ class NoiseModel:
         self.dragging = False
 
         tap.register(tap.MMOVE, self.on_move)
+
+        self.registered = False
+        # self.register()
+
+    def register(self):
+        if self.registered:
+            return
+
+        self.registered = True
         noise.register('noise', self.on_noise)
+
+    def unregister(self):
+        if not self.registered:
+            return
+
+        self.registered = False
+        noise.unregister('noise', self.on_noise)
 
     def on_move(self, typ, e):
         if typ != tap.MMOVE: return
@@ -32,6 +50,10 @@ class NoiseModel:
         now = time.time()
         if noise == 'pop':
             ctrl.mouse_click(button=0, hold=16000)
+        elif noise == 'hiss_start':
+            ctrl.mouse_click(button=self.button, down=True)
+        elif noise == 'hiss_end':
+            ctrl.mouse_click(button=self.button, up=True)
         elif noise == 'hiss_start':
             if now - self.hiss_last < 0.25:
                 ctrl.mouse_click(button=self.button, down=True)
@@ -56,4 +78,4 @@ class NoiseModel:
                     self.hiss_last = now
             self.hiss_start = 0
 
-# model = NoiseModel()
+model = NoiseModel()

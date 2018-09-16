@@ -1,3 +1,5 @@
 *.sublime-workspace
 user_eye.py
 user_eye.py*
+__pycache__
+mouse_jump.p*
